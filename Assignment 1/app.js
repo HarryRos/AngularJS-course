@@ -12,7 +12,7 @@ function  LunchCheckController($scope){
   $scope.LunchItemsQty = 0;
 
   $scope.checkTooMuch = function (){
-    var lunchItems = $scope.lunch.split(';');
+    var lunchItems = $scope.lunch.split(',');
 
 
     var spaceCount = lunchItems.filter(function(x){return x==''}).length;
