@@ -16,6 +16,10 @@ function ToBuyShoppingController(ShoppingListCheckOffService){
   toBuyList.buyItem = function(idx){
     list.buyItem(idx);
   };
+
+  toBuyList.isEmpty = function(){
+    return list.toBuyListIsEmpty();
+  };
 };
 
 AlreadyBoughtShoppingController.$inject = ['ShoppingListCheckOffService'];
@@ -24,7 +28,10 @@ function AlreadyBoughtShoppingController(ShoppingListCheckOffService){
   var list = ShoppingListCheckOffService;
 
   boughtList.items = list.getBoughtListItems();
-  console.log(boughtList.items);
+
+  boughtList.isEmpty = function(){
+    return list.boughtListIsEmpty();
+  };
 };
 
 function ShoppingListCheckOffService(){
@@ -42,7 +49,6 @@ var boughtList = [];
 
 this.buyItem = function(idx){
   var item = toBuyList.splice(idx, 1);
-  console.log(item[0]);
   boughtList.push(item[0]);
 };
 
@@ -52,6 +58,14 @@ this.getToBuyListItems = function(){
 
 this.getBoughtListItems = function(){
   return boughtList;
+};
+
+this.toBuyListIsEmpty = function(){
+  return toBuyList.length === 0;
+};
+
+this.boughtListIsEmpty = function(){
+  return boughtList.length === 0;
 };
 
 };
