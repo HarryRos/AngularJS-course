@@ -41,7 +41,7 @@ var toBuyList = [
   {name: 'Frozen Pizzas', quantity: 2},
   {name: 'Frozen Vegs', quantity: '1 bag'},
   {name: 'Cheese', quantity: '300gr'},
-  {name: 'Beer', quantity: '5 botttles'},
+  {name: 'Beer', quantity: '5 bottles'},
   {name: 'Kitchen Paper', quantity: '1 package'},
   {name: 'Fruit', quantity: '10 Kg'},
 ];
