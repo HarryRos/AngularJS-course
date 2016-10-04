@@ -1,0 +1,17 @@
+<button type="button" class="btn btn-primary" ui-sref="home">Home</button>
+
+<!-- <ul>
+  <li ng-repeat="category in categories.allCategories"
+      ui-sref="items({categoryShortName: category.short_name})">
+    {{category.name}}
+  </li>
+</ul> -->
+<div class="container-fluid">
+  <br>
+  <div class="row">
+    <div class="col-xs-6 col-md-4" ng-repeat="category in categories.allCategories"
+        ui-sref="items({categoryShortName: category.short_name})">
+          {{category.name}}
+    </div>
+  </div>
+</div>

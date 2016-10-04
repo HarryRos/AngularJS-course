@@ -1,0 +1,40 @@
+body {
+  font-size: 1.2em;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  display: none;
+}
+
+.loading-icon {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+}
+
+div[ui-sref]:hover {
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  /*border: solid black 1px;*/
+  /*padding-left: 5px;*/
+  /*padding-right: 5px;*/
+}
+
+.caligraphic {
+  font-family: 'Ruslan Display', cursive;
+}
+
+.vertical-middle {
+  vertical-align: middle;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.page-header {
+  /*background-color: #9E0508;*/
+}
