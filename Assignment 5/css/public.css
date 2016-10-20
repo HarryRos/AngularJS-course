@@ -111,11 +111,39 @@ h3.menu-item-title {
   font-size: .9em;
   font-style: italic;
 }
+
+input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: white;
+}
+
 input[type=text]{
   color: black;
 }
+
 input[type=email]{
   color: black;
+}
+
+button[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type=submit]:hover {
+    background-color: #45a049;
 }
 
 button {
@@ -124,6 +152,30 @@ button {
 
 button[disabled] {
   color: gray;
+}
+
+legend {
+  color: white;
+}
+
+#signup-btn{
+  width: 100%;
+  background-color: transparent;
+  font-size: 1.2em;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 300px;
+}
+
+#signup-btn:hover{
+  background-color:  #557c3e;
+}
+
+#signup-h{
+  text-align: center;
 }
 /* END SINGLE CATEGORY PAGE */
 

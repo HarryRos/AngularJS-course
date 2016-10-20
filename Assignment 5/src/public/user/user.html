@@ -1,20 +1,23 @@
-<div class="container" ng-if="userCtrl.isValid()">
-  <h2 class="text-left">
-    {{userCtrl.user.fname}}  {{ userCtrl.user.lname}}
-  </h2>
-  <div class="text-left">
-    email: {{userCtrl.user.email}}
+<div class="container">
+  <div class="row col-md-12 col-md-offset-2 col-xs-12">
+    <div ng-if="userCtrl.isValid()">
+      <dl class="dl-horizontal">
+        <dt>Name:</dt> <dd>{{userCtrl.user.fname}}  {{ userCtrl.user.lname}}</dd>
+        <dt>email:</dt> <dd>{{userCtrl.user.email}}</dd>
+        <dt>Tel:</dt> <dd>{{userCtrl.user.tel}}</dd>
+        <dt>Favourite Dish:</dt>
+          <menu-item menu-item="userCtrl.user.favData"></menu-item>
+      </dl>
+    </div>
   </div>
-  <div class="text-left">
-    tel: {{userCtrl.user.tel}}
-  </div>
-  <div class="text-left">
-    Favourite Dish:<br>
-    <menu-item menu-item="userCtrl.user.favData"></menu-item>
-  </div>
-</div>
 
-<div class="container" ng-if="!userCtrl.isValid()">
-  Not Signed Up Yet <br>
-<a ui-sref="public.signup">Sign up</a> Now!
+  <div class="row col-md-6 col-md-offset-3 col-xs-12">
+    <div  ng-if="!userCtrl.isValid()">
+            <h1 id="signup-h">Not Signed Up Yet</h1>
+            <button
+            id="signup-btn"
+            ui-sref="public.signup">
+            Sign up Now!</button>
+    </div>
+  </div>
 </div>

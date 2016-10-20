@@ -24,7 +24,7 @@
               ng-model="$ctrl.user.email"
               required>
               <span ng-if="regForm.email.$invalid && regForm.email.$touched">
-                Must be a valid email address: handle@domain format
+                Must be a valid email address: handle@domain format.
               </span>
               <br>
 
@@ -39,14 +39,15 @@
                 No such menu number exists.
               </span>
               <br>
-              <input type="text" name="phone" placeholder="Phone ###-###-####"
+              <input type="text" name="tel" placeholder="Phone ###-###-####"
               ng-model="$ctrl.user.tel"
               pattern="(\d{3})-(\d{3})-(\d{4})">
               <span ng-if="regForm.tel.$invalid && regForm.tel.$touched">
-                Phone must be in the format ###-###-####.
+                Phone must be in the format ###-###-####
               </span>
               <br>
           <button
+            type="submit"
             ng-disabled="regForm.$invalid || !$ctrl.favIsValid"
             ng-click="$ctrl.submit()">Submit</button>
         </form>
