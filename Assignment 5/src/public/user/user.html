@@ -1,0 +1,20 @@
+<div class="container" ng-if="userCtrl.isValid()">
+  <h2 class="text-left">
+    {{userCtrl.user.fname}}  {{ userCtrl.user.lname}}
+  </h2>
+  <div class="text-left">
+    email: {{userCtrl.user.email}}
+  </div>
+  <div class="text-left">
+    tel: {{userCtrl.user.tel}}
+  </div>
+  <div class="text-left">
+    Favourite Dish:<br>
+    <menu-item menu-item="userCtrl.user.favData"></menu-item>
+  </div>
+</div>
+
+<div class="container" ng-if="!userCtrl.isValid()">
+  Not Signed Up Yet <br>
+<a ui-sref="public.signup">Sign up</a> Now!
+</div>

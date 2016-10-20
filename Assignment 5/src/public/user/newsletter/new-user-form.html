@@ -1,0 +1,56 @@
+  <fieldset>
+        <legend>Registration</legend>
+        <form name='regForm' class="input"  novalidate>
+
+          <input type="text" name="fname" placeholder="First Name"
+            ng-model="$ctrl.user.fname"
+            required>
+            <span
+              ng-if="regForm.fname.$error.required && regForm.fname.$touched">
+              Please provide first name.
+            </span>
+            <br>
+
+            <input type="text" name="lname" placeholder="Last Name"
+              ng-model="$ctrl.user.lname"
+              required>
+              <span
+                ng-if="regForm.lname.$error.required && regForm.lname.$touched">
+                Please provide last name.
+              </span>
+              <br>
+
+            <input type="email" name="email" placeholder="Email"
+              ng-model="$ctrl.user.email"
+              required>
+              <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+                Must be a valid email address: handle@domain format
+              </span>
+              <br>
+
+              <input type="text" name="fav" placeholder="Favourite Dish"
+              ng-model="$ctrl.user.fav"
+              ng-blur = $ctrl.checkFavValid($ctrl.user.fav)
+              required>
+              <span ng-if="regForm.fav.$invalid && regForm.fav.$touched">
+                Please provide favourite dish.
+              </span>
+              <span ng-if="!regForm.fav.$invalid && !$ctrl.favIsValid && regForm.fav.$touched">
+                No such menu number exists.
+              </span>
+              <br>
+              <input type="text" name="phone" placeholder="Phone ###-###-####"
+              ng-model="$ctrl.user.tel"
+              pattern="(\d{3})-(\d{3})-(\d{4})">
+              <span ng-if="regForm.tel.$invalid && regForm.tel.$touched">
+                Phone must be in the format ###-###-####.
+              </span>
+              <br>
+          <button
+            ng-disabled="regForm.$invalid || !$ctrl.favIsValid"
+            ng-click="$ctrl.submit()">Submit</button>
+        </form>
+      </fieldset>
+<div class="text-left" ng-if="$ctrl.regSuccess">
+Your information has been saved successfully!
+</div>
